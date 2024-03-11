@@ -1,0 +1,27 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/exchange-rates
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+      jdbc:
+        lob:
+          non_contextual_creation: true
+    show-sql: true
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+
+exchange:
+  api:
+    url: https://openexchangerates.org/api/latest.json?
+    key: your key
+
+
+
+
